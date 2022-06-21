@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		37CE03212861F95500FF3814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CE03202861F95500FF3814 /* AppDelegate.swift */; };
 		37CE03232861F95500FF3814 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CE03222861F95500FF3814 /* SceneDelegate.swift */; };
-		37CE03252861F95500FF3814 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CE03242861F95500FF3814 /* ViewController.swift */; };
-		37CE03282861F95500FF3814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CE03262861F95500FF3814 /* Main.storyboard */; };
 		37CE032A2861F95800FF3814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CE03292861F95800FF3814 /* Assets.xcassets */; };
 		37CE032D2861F95800FF3814 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CE032B2861F95800FF3814 /* LaunchScreen.storyboard */; };
 		37CE03382861F95800FF3814 /* GB_Course_CleanCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CE03372861F95800FF3814 /* GB_Course_CleanCodeTests.swift */; };
@@ -39,8 +37,6 @@
 		37CE031D2861F95500FF3814 /* GB-Course-CleanCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GB-Course-CleanCode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37CE03202861F95500FF3814 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37CE03222861F95500FF3814 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		37CE03242861F95500FF3814 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		37CE03272861F95500FF3814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37CE03292861F95800FF3814 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37CE032C2861F95800FF3814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37CE032E2861F95800FF3814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +72,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		372901F72862090B003F72D8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				37CE03202861F95500FF3814 /* AppDelegate.swift */,
+				37CE03222861F95500FF3814 /* SceneDelegate.swift */,
+				372901FB28620951003F72D8 /* BusinessLogic */,
+				372901FC28620961003F72D8 /* Entity */,
+				372901FD2862096C003F72D8 /* Assembly */,
+				372901FE28620978003F72D8 /* Flows */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		372901F828620917003F72D8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		372901F928620929003F72D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				37CE03292861F95800FF3814 /* Assets.xcassets */,
+				37CE032B2861F95800FF3814 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		372901FA2862093D003F72D8 /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				37CE032E2861F95800FF3814 /* Info.plist */,
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
+		372901FB28620951003F72D8 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		372901FC28620961003F72D8 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		372901FD2862096C003F72D8 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		372901FE28620978003F72D8 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
 		37CE03142861F95500FF3814 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +160,10 @@
 		37CE031F2861F95500FF3814 /* GB-Course-CleanCode */ = {
 			isa = PBXGroup;
 			children = (
-				37CE03202861F95500FF3814 /* AppDelegate.swift */,
-				37CE03222861F95500FF3814 /* SceneDelegate.swift */,
-				37CE03242861F95500FF3814 /* ViewController.swift */,
-				37CE03262861F95500FF3814 /* Main.storyboard */,
-				37CE03292861F95800FF3814 /* Assets.xcassets */,
-				37CE032B2861F95800FF3814 /* LaunchScreen.storyboard */,
-				37CE032E2861F95800FF3814 /* Info.plist */,
+				372901F72862090B003F72D8 /* App */,
+				372901F828620917003F72D8 /* Core */,
+				372901F928620929003F72D8 /* Resources */,
+				372901FA2862093D003F72D8 /* Environments */,
 			);
 			path = "GB-Course-CleanCode";
 			sourceTree = "<group>";
@@ -233,7 +291,6 @@
 			files = (
 				37CE032D2861F95800FF3814 /* LaunchScreen.storyboard in Resources */,
 				37CE032A2861F95800FF3814 /* Assets.xcassets in Resources */,
-				37CE03282861F95500FF3814 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +315,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37CE03252861F95500FF3814 /* ViewController.swift in Sources */,
 				37CE03212861F95500FF3814 /* AppDelegate.swift in Sources */,
 				37CE03232861F95500FF3814 /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +353,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		37CE03262861F95500FF3814 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37CE03272861F95500FF3814 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		37CE032B2861F95800FF3814 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -456,7 +504,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -484,7 +532,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
