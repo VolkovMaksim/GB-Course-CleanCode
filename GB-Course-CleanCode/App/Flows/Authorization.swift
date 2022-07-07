@@ -8,8 +8,8 @@
 import Foundation
 
 class Authorization {
-    var email = "" // Получаем значение из TextFieldEmail
-    var password = "" // Получаем значение из TextFieldPassword
+    var email = "admin@admin.ru" // Получаем значение из TextFieldEmail
+    var password = "1234Qwer" // Получаем значение из TextFieldPassword
     
     func tryLogin(userPass: String) -> Bool {
         // такой метод используется при условии, что пользователь ранее регистрировался и введенный email является правильным
