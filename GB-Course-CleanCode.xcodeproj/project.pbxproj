@@ -15,6 +15,7 @@
 		3723068F289C177E00570A88 /* MerchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3723068E289C177E00570A88 /* MerchViewController.swift */; };
 		3727BE4E28AB6FC700D6D327 /* ServerResponseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3727BE4D28AB6FC700D6D327 /* ServerResponseAuth.swift */; };
 		3727BE5028AB6FE200D6D327 /* ServerResponseReg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3727BE4F28AB6FE200D6D327 /* ServerResponseReg.swift */; };
+		376C22E928BE023200B3F5D5 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C22E828BE023200B3F5D5 /* Stock.swift */; };
 		3779283C28ABE62D000EDAC8 /* EditPersonalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779283B28ABE62D000EDAC8 /* EditPersonalDataService.swift */; };
 		3779283E28ABEEBD000EDAC8 /* ServerResponseEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779283D28ABEEBD000EDAC8 /* ServerResponseEdit.swift */; };
 		37A331F1289FC49400E9BAF3 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A331F0289FC49400E9BAF3 /* AuthorizationService.swift */; };
@@ -64,6 +65,7 @@
 		3723068E289C177E00570A88 /* MerchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchViewController.swift; sourceTree = "<group>"; };
 		3727BE4D28AB6FC700D6D327 /* ServerResponseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseAuth.swift; sourceTree = "<group>"; };
 		3727BE4F28AB6FE200D6D327 /* ServerResponseReg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseReg.swift; sourceTree = "<group>"; };
+		376C22E828BE023200B3F5D5 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		3779283B28ABE62D000EDAC8 /* EditPersonalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalDataService.swift; sourceTree = "<group>"; };
 		3779283D28ABEEBD000EDAC8 /* ServerResponseEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseEdit.swift; sourceTree = "<group>"; };
 		37A331F0289FC49400E9BAF3 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		372901FC28620961003F72D8 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				376C22E828BE023200B3F5D5 /* Stock.swift */,
 				37D8175F286B00CA00D338F6 /* Authorization.swift */,
 				37D81763286B020300D338F6 /* EditProfile.swift */,
 				37D81761286B01DF00D338F6 /* Logout.swift */,
@@ -384,6 +387,7 @@
 			files = (
 				3723068F289C177E00570A88 /* MerchViewController.swift in Sources */,
 				37CE03212861F95500FF3814 /* AppDelegate.swift in Sources */,
+				376C22E928BE023200B3F5D5 /* Stock.swift in Sources */,
 				3727BE5028AB6FE200D6D327 /* ServerResponseReg.swift in Sources */,
 				37A331F328A0298100E9BAF3 /* PersonalViewController.swift in Sources */,
 				3723068B289C175100570A88 /* CartTableViewController.swift in Sources */,
