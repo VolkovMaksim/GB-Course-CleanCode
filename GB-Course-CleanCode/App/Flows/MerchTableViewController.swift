@@ -9,13 +9,13 @@ import UIKit
 
 class MerchTableViewController: UITableViewController {
     
-    var merchInStock = Stock()
+    var merchInStock = StockService()
     var merch = [String]()
     var price = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        merchInStock.merch.forEach { thing in
+        merchInStock.request()
+        merchInStock.stockData.forEach { thing in
             merch.append(thing.key)
             price.append(thing.value)
         }
@@ -31,7 +31,7 @@ class MerchTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return merchInStock.merch.count
+        return merchInStock.stockData.count
     }
 
     
@@ -86,8 +86,18 @@ class MerchTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is MerchViewController {
+            guard
+                let vc = segue.destination as? MerchViewController,
+                let indexPathRow = tableView.indexPathForSelectedRow?.row
+            else {
+                return
+            }
+            print(merch)
+            let merchName = merch[indexPathRow]
+
+            vc.selectedMerchname = merchName
+        }
     }
     
 

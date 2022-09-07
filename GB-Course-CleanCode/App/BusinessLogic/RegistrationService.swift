@@ -16,11 +16,11 @@ fileprivate enum TypeRequests: String {
 
 final class RegistrationService {
     
-//    private let scheme = "http"
-//    private let host = "192.168.100.10"
-//    private let port = 8084
-    private let scheme = "https"
-    private let host = "dev.rus-volk.ru"
+    private let scheme = "http"
+    private let host = "127.0.0.1"
+    private let port = 8084
+//        private let scheme = "https"
+//        private let host = "dev.rus-volk.ru"
     
     private let session: URLSession = {
         let config = URLSessionConfiguration.default
@@ -82,7 +82,7 @@ private extension RegistrationService {
         var urlComponents = URLComponents()
         urlComponents.scheme = scheme
         urlComponents.host = host
-//        urlComponents.port = port
+        urlComponents.port = port
         urlComponents.path = method
         //urlComponents.queryItems = queryItems
 
