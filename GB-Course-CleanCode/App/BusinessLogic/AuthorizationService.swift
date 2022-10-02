@@ -12,11 +12,11 @@ final class AuthorizationService {
     let authorizedUsersData = UserDefaults.standard
     var userData = [String:String]()
     
-    private let scheme = "http"
-    private let host = "127.0.0.1"
-    private let port = 8084
-//    private let scheme = "https"
-//    private let host = "dev.rus-volk.ru"
+//    private let scheme = "http"
+//    private let host = "127.0.0.1"
+//    private let port = 8084
+    private let scheme = "https"
+    private let host = "dev.rus-volk.ru"
     
     private let session: URLSession = {
         let config = URLSessionConfiguration.default
@@ -88,7 +88,7 @@ private extension AuthorizationService {
         var urlComponents = URLComponents()
         urlComponents.scheme = scheme
         urlComponents.host = host
-        urlComponents.port = port
+//        urlComponents.port = port
         urlComponents.path = method
         //urlComponents.queryItems = queryItems
 
