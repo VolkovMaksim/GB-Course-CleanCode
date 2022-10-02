@@ -11,11 +11,11 @@ final class StockService {
     
     var stockData = [String: Int]()
     
-//        private let scheme = "http"
-//        private let host = "127.0.0.1"
-//        private let port = 8084
-    private let scheme = "https"
-    private let host = "dev.rus-volk.ru"
+    private let scheme = "http"
+    private let host = "127.0.0.1"
+    private let port = 8084
+//    private let scheme = "https"
+//    private let host = "dev.rus-volk.ru"
     
     private let session: URLSession = {
         let config = URLSessionConfiguration.default
@@ -25,7 +25,7 @@ final class StockService {
     
     func request() {
         
-        let resultMessage = ""
+        //let resultMessage = ""
         
 //        let params: [String: String] = ["email": email,
 //                                        "password": password
@@ -61,7 +61,7 @@ final class StockService {
                 self.stockData = result.merchAndPriceInStockResponse
                 
                 //resultMessage = result.user_message
-                print(resultMessage)
+                //print(resultMessage)
             } catch {
                 print(error)
             }
@@ -82,7 +82,7 @@ private extension StockService {
         var urlComponents = URLComponents()
         urlComponents.scheme = scheme
         urlComponents.host = host
-//        urlComponents.port = port
+        urlComponents.port = port
         urlComponents.path = method
         //urlComponents.queryItems = queryItems
 

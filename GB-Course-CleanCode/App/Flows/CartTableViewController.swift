@@ -8,10 +8,17 @@
 import UIKit
 
 class CartTableViewController: UITableViewController {
-
+    
+    let paybasketService = PayBasketService()
+    var merchInCart = [String: Int]()
+    var merch = [String]()
+    var price = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        merchInCart.forEach { thing in
+            merch.append(thing.key)
+            price.append(thing.value)
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -21,61 +28,50 @@ class CartTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return merchInCart.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cart", for: indexPath)
 
-        // Configure the cell...
+        
+        cell.textLabel?.text = merch[indexPath.row]
+        cell.detailTextLabel?.text = String(price[indexPath.row])
 
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    @IBAction func payMerch(_ sender: UIBarButtonItem) {
+        let response = paybasketService.request()
+        if response != "" {
+            resumepay(resume: response)
+            merchInCart.removeAll()
+            self.tableView.reloadData()
+            
+        } else {
+            let alertController = UIAlertController(title: "Что-то пошло не так!", message: "Наверное плохое соединение с интернетом", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ОК", style: .default) { _ in}
+            alertController.addAction(okAction)
+            present(alertController, animated: true)
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func resumepay(resume: String) {
+        // создаем алертконтроллер, который будет появляется после отправки введенных данных на сервер
+        let alertController = UIAlertController(title: "Попытка потратить деньги", message: resume, preferredStyle: .alert)
+        // создаем кнопку "OK"
+        let okAction = UIAlertAction(title: "Корзина пуста", style: .default) { _ in
+        
+        }
+        // добавляем кнопку ОК в алертконтроллер
+        alertController.addAction(okAction)
+        // презентуем алертконтроллер с анимацией
+        present(alertController, animated: true)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+    
     /*
     // MARK: - Navigation
 

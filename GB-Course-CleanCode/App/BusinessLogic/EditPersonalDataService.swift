@@ -9,11 +9,11 @@ import Foundation
 
 final class EditPersonalDataService {
     
-    //    private let scheme = "http"
-    //    private let host = "192.168.100.10"
-    //    private let port = 8084
-        private let scheme = "https"
-        private let host = "dev.rus-volk.ru"
+        private let scheme = "http"
+        private let host = "192.168.100.10"
+        private let port = 8084
+//        private let scheme = "https"
+//        private let host = "dev.rus-volk.ru"
     
     private let session: URLSession = {
         let config = URLSessionConfiguration.default
@@ -80,7 +80,7 @@ private extension EditPersonalDataService {
         var urlComponents = URLComponents()
         urlComponents.scheme = scheme
         urlComponents.host = host
-//        urlComponents.port = port
+        urlComponents.port = port
         urlComponents.path = method
         //urlComponents.queryItems = queryItems
 

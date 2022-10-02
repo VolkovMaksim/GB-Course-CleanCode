@@ -8,10 +8,12 @@
 import UIKit
 
 class MerchTableViewController: UITableViewController {
-    
+    var addToCart = AddToCartService()
+    var deleteFromCartService = DeleteFromCartService()
     var merchInStock = StockService()
     var merch = [String]()
     var price = [Int]()
+    var merchInCart = [String: Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
         merchInStock.request()
@@ -46,6 +48,44 @@ class MerchTableViewController: UITableViewController {
     }
     
 
+    // MARK: - leadingSwipeActionsConfigurationForRowAt
+    
+    // добавляем действие при свайпе ячейки слева направо
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let toCart = addToCart(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [toCart])
+    }
+    
+    // MARK: - doneAction
+    
+    // создаем функцию для контекстной кнопки Done
+    func addToCart (at indexPath: IndexPath) -> UIContextualAction {
+        
+        if merchInCart[merch[indexPath.row]] == nil {
+            // сначала создадим объект типа UIContextualAction
+            let action = UIContextualAction(style: .destructive, title: "incart") { (action, view, completion) in
+                // добавляем в массив выбранный товар
+                self.addToCart.request(merchname: self.merch[indexPath.row])
+                self.merchInCart[self.merch[indexPath.row]] = self.price[indexPath.row]
+                self.tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(systemName: "cart")
+                completion(true)
+            }
+            action.backgroundColor = .systemGreen
+            action.image = UIImage(systemName: "cart.badge.plus")
+            return action
+        } else {
+            let unAction = UIContextualAction(style: .destructive, title: "outcart") { (action, view, completion) in
+                // удаляем товар из корзины клиента
+                self.deleteFromCartService.request(merchname: self.merch[indexPath.row])
+                self.merchInCart.removeValue(forKey: self.merch[indexPath.row])
+                
+                self.tableView.cellForRow(at: indexPath)?.imageView?.image = nil
+                completion(true)
+            }
+            unAction.image = UIImage(systemName: "cart.badge.minus")
+            return unAction
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -97,6 +137,19 @@ class MerchTableViewController: UITableViewController {
             let merchName = merch[indexPathRow]
 
             vc.selectedMerchname = merchName
+        } else if segue.destination is CartTableViewController {
+            guard
+                let vc = segue.destination as? CartTableViewController
+                //let indexPathRow = tableView.indexPathForSelectedRow?.row
+            else {
+                return
+            }
+            print(merchInCart)
+            vc.merchInCart = merchInCart
+            merchInCart = [String: Int]()
+            self.tableView.reloadData()
+//            vc.price = price
+//            vc.merch = merch
         }
     }
     

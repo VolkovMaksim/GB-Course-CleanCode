@@ -1,26 +1,21 @@
 //
-//  RegistrationService.swift
+//  DeleteFromCartService.swift
 //  GB-Course-CleanCode
 //
-//  Created by Maksim Volkov on 05.08.2022.
+//  Created by Maksim Volkov on 07.09.2022.
 //
 
 import Foundation
 
-fileprivate enum TypeRequests: String {
-    case get = "GET"
-    case post = "POST"
-}
-
-
-
-final class RegistrationService {
+final class DeleteFromCartService {
+    
+    var cartMessage: String = ""
     
     private let scheme = "http"
     private let host = "127.0.0.1"
     private let port = 8084
-//    private let scheme = "https"
-//    private let host = "dev.rus-volk.ru"
+//        private let scheme = "https"
+//        private let host = "dev.rus-volk.ru"
     
     private let session: URLSession = {
         let config = URLSessionConfiguration.default
@@ -28,22 +23,16 @@ final class RegistrationService {
         return session
     }()
     
-    func request(username: String, email: String, password: String, creditcard: String) -> String {
+    func request(merchname: String) {
         
-        var resultMessage = ""
         // создаем словарь для отправки данных пользователя на сервер
-        let params: [String: Any] = ["username": username,
-                                    "email": email,
-                                    "password": password,
-                                    "credit_card": creditcard
-        ]
+        let params: [String: String] = ["merchname": merchname]
         // добавляем метод для регистрации
-        let url = configureUrl(method: "/registration")
+        let url = configureUrl(method: "/removefromcart")
         print(url)
 
         // создаем data с данными пользователя
         let jsonData = try? JSONSerialization.data(withJSONObject: params)
-
         // create post request
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -52,7 +41,6 @@ final class RegistrationService {
         request.httpBody = jsonData
         // без этого указания Vapor будет писать Bad request
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         let task = session.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print(error.localizedDescription)
@@ -61,20 +49,18 @@ final class RegistrationService {
             let decoder = JSONDecoder()
 
             do {
-                let result = try decoder.decode(ServerResponseReg.self, from: data)
-                resultMessage = result.user_message
-                print(resultMessage)
+                let result = try decoder.decode(AddToCartResponse.self, from: data)
+                self.cartMessage = result.cart_message
             } catch {
                 print(error)
             }
         }
         task.resume()
         sleep(1)
-        return resultMessage
     }
 }
 
-private extension RegistrationService {
+private extension DeleteFromCartService {
     
     func configureUrl(method: String) -> URL {
         //var queryItems = [URLQueryItem]()
