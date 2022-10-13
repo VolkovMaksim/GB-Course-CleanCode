@@ -17,6 +17,7 @@
 		3727BE5028AB6FE200D6D327 /* ServerResponseReg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3727BE4F28AB6FE200D6D327 /* ServerResponseReg.swift */; };
 		372BD8D028C3A6F6001F4EFE /* StockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372BD8CF28C3A6F6001F4EFE /* StockService.swift */; };
 		372BD8D228C3ADCC001F4EFE /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372BD8D128C3ADCC001F4EFE /* StockResponse.swift */; };
+		3749420F28F31C9100A90EB6 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3749420E28F31C9100A90EB6 /* FirebaseCrashlytics */; };
 		375A07FF28C507F400F291C5 /* MerchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375A07FE28C507F400F291C5 /* MerchService.swift */; };
 		375A080128C5092700F291C5 /* MerchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375A080028C5092700F291C5 /* MerchResponse.swift */; };
 		376DE20628E9AF8300AAD8FB /* AddToCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DE20528E9AF8300AAD8FB /* AddToCartResponse.swift */; };
@@ -41,6 +42,7 @@
 		37E6078928C8F334002DF610 /* PayBasketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6078828C8F334002DF610 /* PayBasketService.swift */; };
 		37E6078B28C8F3A3002DF610 /* AddToCartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6078A28C8F3A3002DF610 /* AddToCartService.swift */; };
 		37E6078D28C8F3DB002DF610 /* DeleteFromCartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6078C28C8F3DB002DF610 /* DeleteFromCartService.swift */; };
+		37F3D49A28FC31A4004C466B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37F3D49928FC31A4004C466B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,7 @@
 		37E6078828C8F334002DF610 /* PayBasketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketService.swift; sourceTree = "<group>"; };
 		37E6078A28C8F3A3002DF610 /* AddToCartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartService.swift; sourceTree = "<group>"; };
 		37E6078C28C8F3DB002DF610 /* DeleteFromCartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromCartService.swift; sourceTree = "<group>"; };
+		37F3D49928FC31A4004C466B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3749420F28F31C9100A90EB6 /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,14 +156,6 @@
 				37CE03292861F95800FF3814 /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		372901FA2862093D003F72D8 /* Environments */ = {
-			isa = PBXGroup;
-			children = (
-				37CE032E2861F95800FF3814 /* Info.plist */,
-			);
-			path = Environments;
 			sourceTree = "<group>";
 		};
 		372901FB28620951003F72D8 /* BusinessLogic */ = {
@@ -232,10 +228,11 @@
 		37CE031F2861F95500FF3814 /* GB-Course-CleanCode */ = {
 			isa = PBXGroup;
 			children = (
+				37F3D49928FC31A4004C466B /* GoogleService-Info.plist */,
+				37CE032E2861F95800FF3814 /* Info.plist */,
 				372901F72862090B003F72D8 /* App */,
 				372901F828620917003F72D8 /* Core */,
 				372901F928620929003F72D8 /* Resources */,
-				372901FA2862093D003F72D8 /* Environments */,
 			);
 			path = "GB-Course-CleanCode";
 			sourceTree = "<group>";
@@ -276,12 +273,16 @@
 				37CE03192861F95500FF3814 /* Sources */,
 				37CE031A2861F95500FF3814 /* Frameworks */,
 				37CE031B2861F95500FF3814 /* Resources */,
+				3749421128F3284600A90EB6 /* Crashlytics */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "GB-Course-CleanCode";
+			packageProductDependencies = (
+				3749420E28F31C9100A90EB6 /* FirebaseCrashlytics */,
+			);
 			productName = "GB-Course-CleanCode";
 			productReference = 37CE031D2861F95500FF3814 /* GB-Course-CleanCode.app */;
 			productType = "com.apple.product-type.application";
@@ -354,6 +355,9 @@
 				Base,
 			);
 			mainGroup = 37CE03142861F95500FF3814;
+			packageReferences = (
+				3749420D28F31C9100A90EB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 37CE031E2861F95500FF3814 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -371,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A71646289BD24800757D2C /* Main.storyboard in Resources */,
+				37F3D49A28FC31A4004C466B /* GoogleService-Info.plist in Resources */,
 				37CE032D2861F95800FF3814 /* LaunchScreen.storyboard in Resources */,
 				37CE032A2861F95800FF3814 /* Assets.xcassets in Resources */,
 			);
@@ -391,6 +396,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3749421128F3284600A90EB6 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		37CE03192861F95500FF3814 /* Sources */ = {
@@ -514,7 +543,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -601,17 +630,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X8852RDP32;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GB-Course-CleanCode/Environments/Info.plist";
+				INFOPLIST_FILE = "GB-Course-CleanCode/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -619,6 +650,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.rus-volk.GB-Course-CleanCode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -630,17 +662,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X8852RDP32;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GB-Course-CleanCode/Environments/Info.plist";
+				INFOPLIST_FILE = "GB-Course-CleanCode/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -648,6 +682,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.rus-volk.GB-Course-CleanCode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -660,7 +695,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X8852RDP32;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -680,7 +715,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X8852RDP32;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -699,7 +734,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X8852RDP32;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -717,7 +752,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X8852RDP32;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -770,6 +805,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3749420D28F31C9100A90EB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3749420E28F31C9100A90EB6 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3749420D28F31C9100A90EB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 37CE03152861F95500FF3814 /* Project object */;
 }

@@ -46,14 +46,24 @@
                                     <constraint firstAttribute="width" constant="170" id="Irt-uZ-Bju"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnY-j1-CvQ">
+                                <rect key="frame" x="150" y="534" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="crashButtonTapped:" destination="awY-jO-z1B" eventType="touchUpInside" id="4Nn-q3-83u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tx5-Ys-RQJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="EnY-j1-CvQ" firstAttribute="top" secondItem="H51-ub-edk" secondAttribute="bottom" constant="36.5" id="0uh-eY-gO7"/>
                             <constraint firstItem="Wja-Il-L9j" firstAttribute="centerX" secondItem="tx5-Ys-RQJ" secondAttribute="centerX" id="GHz-kd-iTj"/>
                             <constraint firstItem="7cZ-AR-89f" firstAttribute="top" secondItem="tx5-Ys-RQJ" secondAttribute="top" constant="113" id="Jae-EV-h3s"/>
                             <constraint firstItem="7cZ-AR-89f" firstAttribute="centerX" secondItem="tx5-Ys-RQJ" secondAttribute="centerX" id="XYx-b2-AQs"/>
                             <constraint firstItem="H51-ub-edk" firstAttribute="top" secondItem="Wja-Il-L9j" secondAttribute="bottom" constant="44" id="lIU-DX-BUq"/>
+                            <constraint firstItem="EnY-j1-CvQ" firstAttribute="centerX" secondItem="tx5-Ys-RQJ" secondAttribute="centerX" id="oWz-Gn-PYf"/>
                             <constraint firstItem="Wja-Il-L9j" firstAttribute="top" secondItem="7cZ-AR-89f" secondAttribute="bottom" constant="58" id="qRU-hP-Qk6"/>
                             <constraint firstItem="H51-ub-edk" firstAttribute="centerX" secondItem="tx5-Ys-RQJ" secondAttribute="centerX" id="qXB-fb-cK7"/>
                         </constraints>
